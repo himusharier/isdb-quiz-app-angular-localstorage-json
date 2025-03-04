@@ -34,7 +34,7 @@ export class RegisterComponent {
       );
 
       if (success) {
-        this.message = this.domSanitizer.bypassSecurityTrustHtml('<div class="alert alert-success" role="alert">Registration successful! Please login...</div>');
+        this.message = this.domSanitizer.bypassSecurityTrustHtml('<div class="alert alert-success" role="alert"><i class="bi bi-check-circle"></i> Registration successful! Please login...</div>');
         this.isError = false;
         setTimeout(() => this.message = "", 3000);
 
@@ -43,13 +43,13 @@ export class RegisterComponent {
         this.userPassword = "";
 
       } else {
-        this.message = this.domSanitizer.bypassSecurityTrustHtml('<div class="alert alert-danger" role="alert">User email already exists! Try with different email...</div>');
+        this.message = this.domSanitizer.bypassSecurityTrustHtml('<div class="alert alert-danger" role="alert"><i class="bi bi-exclamation-circle"></i> User email already exists! Try with different email...</div>');
         this.isError = true;
         setTimeout(() => this.message = "", 3000);
       }
 
     } else {
-      this.message = this.domSanitizer.bypassSecurityTrustHtml('<div class="alert alert-danger" role="alert">Fill the form correctly!</div>');
+      this.message = this.domSanitizer.bypassSecurityTrustHtml('<div class="alert alert-danger" role="alert"><i class="bi bi-x-circle"></i> Fill the form correctly!</div>');
       this.isError = true;
       setTimeout(() => this.message = "", 3000);
     }
