@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NavbarComponent } from "../components/navbar/navbar.component";
 import { HeaderComponent } from "../components/header/header.component";
 import { HeaderTitleService } from '../services/header-title.service';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-create-quiz',
@@ -11,7 +12,10 @@ import { HeaderTitleService } from '../services/header-title.service';
 })
 export class CreateQuizComponent implements OnInit {
 
-  constructor(private headerTitleService: HeaderTitleService) {}
+  constructor(
+    private headerTitleService: HeaderTitleService,
+    private titleService: Title
+  ) {}
 
   updateHeaderTitleValue(givenTitle: string) {
     this.headerTitleService.updateHeaderTitle(givenTitle);
@@ -19,5 +23,6 @@ export class CreateQuizComponent implements OnInit {
   
   ngOnInit(): void {
     this.updateHeaderTitleValue("Create a Quiz");
+    this.titleService.setTitle('Create Quiz - QuizFusion');
   }
 }

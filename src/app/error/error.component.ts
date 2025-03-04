@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NavbarComponent } from "../components/navbar/navbar.component";
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-error',
@@ -7,6 +8,11 @@ import { NavbarComponent } from "../components/navbar/navbar.component";
   templateUrl: './error.component.html',
   styleUrl: './error.component.css'
 })
-export class ErrorComponent {
-
+export class ErrorComponent implements OnInit {
+  constructor(
+    private titleService: Title
+  ) {}
+  ngOnInit(): void {
+    this.titleService.setTitle('Not Found - QuizFusion');
+  }
 }
