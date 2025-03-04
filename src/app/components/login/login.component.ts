@@ -24,9 +24,12 @@ export class LoginComponent {
   onSubmit() {
     if (this.userEmail != "", this.userPassword != "") {
       if (this.loginRegisterService.login(this.userEmail, this.userPassword)) {
-        this.message = this.domSanitizer.bypassSecurityTrustHtml('<div class="alert alert-success" role="alert"><i class="bi bi-check-circle"></i> Login successful...</div>');
+        this.message = this.domSanitizer.bypassSecurityTrustHtml('<div class="alert alert-success" role="alert"><i class="bi bi-check-circle"></i> Login successful! Please wait...</div>');
         this.isError = false;
-        setTimeout(() => this.message = "", 3000);
+        setTimeout(() => {
+          this.message = "",
+          window.location.reload();
+        }, 1000);
         
         this.userEmail = "";
         this.userPassword = "";

@@ -22,14 +22,18 @@
                                 Quiz
                             </a>
                         </li>
+                        @if (isUserLoggedIn) {
                         <li class="nav-item">
                             <a class="nav-link active" routerLink="/profile" style="color: #F49291;">
                               <i class="bi bi-person-gear"></i>
                                 Profile
                             </a>
                         </li>
+                        }
+
                     </ul>
                     <ul class="navbar-nav">
+                        @if (!isUserLoggedIn) {
                         <div class="modal-ul-li">
                           <li data-bs-toggle="modal" data-bs-target="#login-modal" style="cursor: pointer;">
                             <span>
@@ -45,20 +49,22 @@
                             </span>
                           </li>
                         </div>
-                        <!-- <li class="nav-item dropdown">
+                        } @else {
+                        <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="bi bi-person"></i>
-                                himusharier&commat;gmail.com
+                                {{loggedinUserName}}
                             </a>
                             <ul class="dropdown-menu" style="text-align: center;">
                               <li>
-                                <a class="dropdown-item" href="#" style="color: red;">
-                                Logout
-                                <i class="bi bi-box-arrow-right"></i>
+                                <a class="dropdown-item" href="#" style="color: #F49291;" (click)="logoutBtn()">
+                                    Logout
+                                    <i class="bi bi-box-arrow-right"></i>
                                 </a>
                               </li>
                             </ul>
-                        </li> -->
+                        </li>
+                        }
                     </ul>
                 </div>
             </div>
