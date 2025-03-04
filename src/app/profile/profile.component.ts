@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavbarComponent } from "../components/navbar/navbar.component";
 import { HeaderComponent } from "../components/header/header.component";
-import { HeaderTitleService } from '../services/header-title.service';
+import { HeaderTitleService } from '../services/header-title/header-title.service';
 import { Title } from '@angular/platform-browser';
 
 @Component({

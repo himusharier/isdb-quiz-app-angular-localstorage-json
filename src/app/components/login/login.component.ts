@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { LoginRegisterService } from '../../services/login-register.service';
+import { LoginRegisterService } from '../../services/login-register/login-register.service';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 @Component({
