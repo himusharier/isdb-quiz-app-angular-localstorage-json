@@ -1,5 +1,19 @@
 <app-navbar></app-navbar>
 <app-header></app-header>
 <div class="container p-4 pt-0">
-    <p>profile works!</p>
+    <div class="container-main-div p-3">
+        <div class="d-flex align-items-center" style="border-bottom: 2px solid #F49291;">
+            <div>
+                <i class="bi bi-person" style="font-size: 76px;"></i>
+            </div>
+            <div style="margin-top: 20px; margin-left: 20px;">
+                <h3>{{loggedinUserName}}</h3>
+                <p>{{loggedinUserEmail}}</p>
+            </div>
+        </div>
+        <div class="alert alert-warning mt-4">
+            <p>No other record found!</p>
+        </div>
+
+    </div>
 </div>
