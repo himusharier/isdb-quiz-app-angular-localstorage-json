@@ -5,10 +5,13 @@ import { HeaderTitleService } from '../services/header-title/header-title.servic
 import { Title } from '@angular/platform-browser';
 import { LoggedinUserService } from '../services/loggedin-user/loggedin-user.service';
 import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { EditProfileComponent } from "../components/edit-profile/edit-profile.component";
 
 @Component({
   selector: 'app-profile',
-  imports: [NavbarComponent, HeaderComponent],
+  imports: [NavbarComponent, HeaderComponent, CommonModule, EditProfileComponent],
   templateUrl: './profile.component.html',
   styleUrl: './profile.component.css'
 })

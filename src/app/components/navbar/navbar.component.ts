@@ -3,10 +3,11 @@ import { RouterLink } from '@angular/router';
 import { RegisterComponent } from "../register/register.component";
 import { LoginComponent } from "../login/login.component";
 import { LoggedinUserService } from '../../services/loggedin-user/loggedin-user.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-navbar',
-  imports: [RouterLink, RegisterComponent, LoginComponent],
+  imports: [RouterLink, RegisterComponent, LoginComponent, CommonModule],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css'
 })

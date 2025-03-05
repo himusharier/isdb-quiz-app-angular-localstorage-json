@@ -4,16 +4,17 @@
     <div class="container-main-div p-3">
         <div class="d-flex align-items-center" style="border-bottom: 2px solid #F49291;">
             <div>
-                <i class="bi bi-person" style="font-size: 76px;"></i>
+                <i class="bi bi-person" style="font-size: 76px;"></i>                
             </div>
             <div style="margin-top: 20px; margin-left: 20px;">
-                <h3>{{loggedinUserName}}</h3>
-                <p>{{loggedinUserEmail}}</p>
+                <h3>{{loggedinUserName | titlecase}} <i class="bi bi-pencil-square" style="color: #F49291;"></i></h3>
+                <p>{{loggedinUserEmail | lowercase}}</p>
             </div>
         </div>
         <div class="alert alert-warning mt-4">
             <p>No other record found!</p>
         </div>
-
     </div>
 </div>
+
+<app-edit-profile></app-edit-profile>
