@@ -24,14 +24,15 @@ export class HeaderComponent implements OnInit {
   }
 
   private modal: bootstrap.Modal | null = null;
-  loginFirstModal = document.getElementById('loginfirst');
+  
   createQuiz() {
     if (this.loggedinUserService.isLoggedIn()) {
       this.router.navigate(['/create-quiz']);
 
     } else {
-      if (this.loginFirstModal) {
-        this.modal = new bootstrap.Modal(this.loginFirstModal);
+      const loginFirstModal = document.getElementById('loginfirst');
+      if (loginFirstModal) {
+        this.modal = new bootstrap.Modal(loginFirstModal);
         this.modal.show();
       }
     }
