@@ -16,6 +16,7 @@ import { EditProfileComponent } from "../components/edit-profile/edit-profile.co
   styleUrl: './profile.component.css'
 })
 export class ProfileComponent implements OnInit {
+  loggedinUserId: string = "";
   loggedinUserName: string = "";
   loggedinUserEmail: string = "";
 
@@ -39,6 +40,7 @@ export class ProfileComponent implements OnInit {
 
     } else {
       const loggedInUser = this.loggedinUserService.getLoggedInUser();
+      this.loggedinUserId = loggedInUser ? loggedInUser.userId : ''; 
       this.loggedinUserName = loggedInUser ? loggedInUser.userName : ''; 
       this.loggedinUserEmail = loggedInUser ? loggedInUser.userEmail : ''; 
     }

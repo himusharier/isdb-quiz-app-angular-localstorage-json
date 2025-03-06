@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { User } from '../../model/user.model';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ export class LoggedinUserService {
     return localStorage.getItem('loggedInUser') !== null;
   }
 
-  getLoggedInUser(): any {
+  getLoggedInUser(): User {
     return JSON.parse(localStorage.getItem('loggedInUser') || 'null');
   }
 

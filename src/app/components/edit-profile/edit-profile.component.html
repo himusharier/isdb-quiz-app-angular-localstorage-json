@@ -12,6 +12,11 @@
                     <label for="username" class="form-label">Name</label>
                     <input type="text" class="form-control" id="username" name="username" [value]="userName" [(ngModel)]="userName">
                 </div>
+                <div class="mb-3">
+                    <label for="useremail" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="useremail" name="useremail" [(ngModel)]="userEmail" disabled readonly>
+                </div>
+                <input type="hidden" id="userId" name="userId" [(ngModel)]="userId">
             </div>
             <div class="modal-footer">
                 <button type="submit" class="btn btn-primary" style="background-color: #F49291; border: none;">

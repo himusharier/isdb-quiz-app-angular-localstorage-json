@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
+import { User } from '../../model/user.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginRegisterService {
+  user: User = new User('', '', '', '');
   constructor() { }
 
   private userIdGenerator(): string {
@@ -47,6 +49,39 @@ export class LoginRegisterService {
     }
 
     return false;
+  }
+
+  update(
+    userId: string,
+    userName: string
+  ): boolean {
+    let loggedinUser = JSON.parse(localStorage.getItem('loggedInUser') || '[]');
+    // loggedinUser = loggedinUser.map((user: any) => {
+    //   if (user.userId === userId) {
+    //     user.userName = userName;
+    //     return user;
+    //   }
+    //   return user;
+    // });
+
+    if (loggedinUser.userId === userId) {
+      loggedinUser.userName = userName;
+      localStorage.setItem('loggedInUser', JSON.stringify(loggedinUser));
+    }
+    localStorage.setItem('loggedInUser', JSON.stringify(loggedinUser));
+
+    let users = JSON.parse(localStorage.getItem('users') || '[]');
+    users = users.map((user: any) => {
+      if (user.userId === userId) {
+        user.userName = userName;
+        return user;
+      }
+      return user;
+    });
+    localStorage.setItem('users', JSON.stringify(users));
+
+    return true;
+    
   }
 
 }
