@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -9,5 +9,14 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './edit-profile.component.css'
 })
 export class EditProfileComponent {
+  message: string = "";
+  isError: boolean = false;
+  // userName: string = "";
+
+  @Input() userName!: string; 
+
+  onUpdate() {
+
+  }
 
 }

@@ -7,7 +7,10 @@
                 <i class="bi bi-person" style="font-size: 76px;"></i>                
             </div>
             <div style="margin-top: 20px; margin-left: 20px;">
-                <h3>{{loggedinUserName | titlecase}} <i class="bi bi-pencil-square" style="color: #F49291;"></i></h3>
+                <h3>
+                    {{loggedinUserName | titlecase}} 
+                    <i class="bi bi-pencil-square" style="color: #F49291;cursor: pointer;" data-bs-toggle="modal" data-bs-target="#edit-profile-modal"></i>
+                </h3>
                 <p>{{loggedinUserEmail | lowercase}}</p>
             </div>
         </div>
@@ -17,4 +20,4 @@
     </div>
 </div>
 
-<app-edit-profile></app-edit-profile>
+<app-edit-profile [userName]="loggedinUserName"></app-edit-profile>

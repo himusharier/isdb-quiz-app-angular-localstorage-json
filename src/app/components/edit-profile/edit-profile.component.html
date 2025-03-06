@@ -1,4 +1,4 @@
-<!-- <div class="modal fade" id="register-modal" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+<div class="modal fade" id="edit-profile-modal" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <form (submit)="onUpdate(); $event.preventDefault()">
@@ -10,20 +10,16 @@
                 <div *ngIf="message" [class.error]="isError" [class.success]="!isError" [innerHtml]="message"></div>
                 <div class="mb-3">
                     <label for="username" class="form-label">Name</label>
-                    <input type="text" class="form-control" id="username" name="username" [(ngModel)]="userName">
-                </div>
-                <div class="mb-3">
-                    <label for="useremail" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="useremail" name="useremail" [(ngModel)]="userEmail">
+                    <input type="text" class="form-control" id="username" name="username" [value]="userName" [(ngModel)]="userName">
                 </div>
             </div>
             <div class="modal-footer">
                 <button type="submit" class="btn btn-primary" style="background-color: #F49291; border: none;">
-                    <i class="bi bi-send"></i>
-                    Submit
+                    <i class="bi bi-floppy"></i>
+                    Update
                 </button>
             </div>
         </form>
       </div>
     </div>
-</div> -->
+</div>
