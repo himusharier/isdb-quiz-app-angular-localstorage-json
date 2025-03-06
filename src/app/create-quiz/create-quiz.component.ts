@@ -22,7 +22,7 @@ export class CreateQuizComponent implements OnInit {
   }
   
   ngOnInit(): void {
-    this.updateHeaderTitleValue("Create a Quiz");
+    this.updateHeaderTitleValue("Create New Quiz");
     this.titleService.setTitle('Create Quiz - QuizFusion');
   }
 }
