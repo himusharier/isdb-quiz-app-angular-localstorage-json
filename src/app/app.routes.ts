@@ -4,6 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { QuizComponent } from './quiz/quiz.component';
 import { CreateQuizComponent } from './create-quiz/create-quiz.component';
 import { ProfileComponent } from './profile/profile.component';
+import { JsonUploadComponent } from './components/json-upload/json-upload.component';
 
 export const routes: Routes = [
     {path: '', pathMatch: 'full', component: HomeComponent},
@@ -11,5 +12,6 @@ export const routes: Routes = [
     {path: 'quiz', pathMatch: 'full', component: QuizComponent},
     {path: 'create-quiz', pathMatch: 'full', component: CreateQuizComponent},
     {path: 'profile', pathMatch: 'full', component: ProfileComponent},
+    {path: 'json-upload', pathMatch: 'full', component: JsonUploadComponent}, // to load json data into localstorage only.
     {path: '**', component: ErrorComponent}
 ];

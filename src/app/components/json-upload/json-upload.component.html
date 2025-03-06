@@ -1,0 +1,30 @@
+<div class="upload-form">
+    <h2>Upload JSON and Save to localStorage</h2>
+  
+    <form (ngSubmit)="onSubmit()">
+      <div>
+        <label for="storageKey">localStorage Key:</label>
+        <input
+          type="text"
+          id="storageKey"
+          [(ngModel)]="storageKey"
+          name="storageKey"
+          required
+        />
+      </div>
+  
+      <div>
+        <label for="jsonFile">Select JSON File:</label>
+        <input
+          type="file"
+          id="jsonFile"
+          (change)="onFileSelected($event)"
+          accept=".json"
+          required
+        />
+      </div>
+  
+      <button type="submit" [disabled]="!storageKey || !selectedFile">Upload and Save</button>
+    </form>
+  </div>
+  
