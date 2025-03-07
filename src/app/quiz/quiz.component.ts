@@ -19,10 +19,10 @@ export class QuizComponent implements OnInit {
 
   updateHeaderTitleValue(givenTitle: string) {
     this.headerTitleService.updateHeaderTitle(givenTitle);
-    this.titleService.setTitle('Quiz List - QuizFusion');
+    this.titleService.setTitle('Quizzes - QuizFusion');
   }
   
   ngOnInit(): void {
-    this.updateHeaderTitleValue("Quiz List");
+    this.updateHeaderTitleValue("Quizzes");
   }
 }

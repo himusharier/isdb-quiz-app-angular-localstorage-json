@@ -6,7 +6,6 @@ import { Title } from '@angular/platform-browser';
 import { LoggedinUserService } from '../services/loggedin-user/loggedin-user.service';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
 import { EditProfileComponent } from "../components/edit-profile/edit-profile.component";
 
 @Component({
