@@ -4,7 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { QuizComponent } from './quiz/quiz.component';
 import { CreateQuizComponent } from './create-quiz/create-quiz.component';
 import { ProfileComponent } from './profile/profile.component';
-import { JsonUploadComponent } from './components/json-upload/json-upload.component';
+import { JsonUploadComponent } from './json-upload/json-upload.component';
 
 export const routes: Routes = [
     {path: '', pathMatch: 'full', component: HomeComponent},
