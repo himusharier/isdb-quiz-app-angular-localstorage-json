@@ -27,7 +27,8 @@ export class HeaderComponent implements OnInit {
   
   createQuiz() {
     if (this.loggedinUserService.isLoggedIn()) {
-      this.router.navigate(['/create-quiz']);
+      // this.router.navigate(['/create-quiz']);
+      window.location.href="/create-quiz";
 
     } else {
       const loginFirstModal = document.getElementById('loginfirst');

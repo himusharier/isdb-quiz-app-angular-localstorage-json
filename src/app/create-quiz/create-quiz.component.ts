@@ -9,6 +9,7 @@ import { LoggedinUserService } from '../services/loggedin-user/loggedin-user.ser
 import { CreateQuizService } from '../services/create-quiz/create-quiz.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { Quizzes } from '../model/quizzes.model';
 
 @Component({
   selector: 'app-create-quiz',
@@ -22,12 +23,12 @@ export class CreateQuizComponent implements OnInit {
   loggedinUserEmail: string = "";
 
   quizTitle: string = "";
-  quizDate: Date = new Date();
+  quizDate: string = "";
 
   message: SafeHtml = "";
   isError = false;
 
-  content: string = "";
+  getQuizId: string = "";
 
   constructor(
     private headerTitleService: HeaderTitleService,
@@ -39,13 +40,18 @@ export class CreateQuizComponent implements OnInit {
     private domSanitizer: DomSanitizer
   ) {
     this.route.queryParams.subscribe(params => {
-      this.content = params['quiz'] || '';
+      this.getQuizId = params['quiz'] || '';
     });
   }
 
   updateHeaderTitleValue(givenTitle: string) {
     this.headerTitleService.updateHeaderTitle(givenTitle);
   }
+
+  private quizIdGenerator(): string {
+    return Math.floor(100000 + Math.random() * 900000).toString();
+  }
+  quizId: string = this.quizIdGenerator();
   
   ngOnInit(): void {
     this.updateHeaderTitleValue("Create New Quiz");
@@ -60,17 +66,28 @@ export class CreateQuizComponent implements OnInit {
       this.loggedinUserName = loggedInUser ? loggedInUser.userName : ''; 
       this.loggedinUserEmail = loggedInUser ? loggedInUser.userEmail : ''; 
     }
-  }
 
-  private quizIdGenerator(): string {
-    return Math.floor(100000 + Math.random() * 900000).toString();
+    const currentDate = new Date();
+    this.quizDate = currentDate.toISOString().split('T')[0];
+
+    // Retrieve quiz title from localStorage
+    const quizzesList: Quizzes[] = JSON.parse(localStorage.getItem('quizzes') || '[]')
+    // Find the quiz based on quizId (the one that matches the content query parameter)
+    const quiz = quizzesList.find(x => x.quizId === this.getQuizId);
+    // If the quiz exists, set the quizTitle
+    if (quiz) {
+      this.quizTitle = quiz.quizTitle;
+      this.quizDate = quiz.quizDate;
+      this.quizId = quiz.quizId;
+      this.loggedinUserName = quiz.creatorName;
+      this.loggedinUserEmail = quiz.creatorEmail;
+    }
+
   }
-  quizId: string = this.quizIdGenerator();
 
   onSubmit() {
     if (this.quizTitle != "") {
-      
-      const success = this.createQuizService.quizCreator(
+      const success = this.createQuizService.createQuiz(
         {
           quizId: this.quizId,
           quizTitle: this.quizTitle,
@@ -102,6 +119,35 @@ export class CreateQuizComponent implements OnInit {
       setTimeout(() => this.message = "", 3000);
     }
 
+  }
+
+  onUpdate() {
+    if (this.quizTitle != "") {
+      const success = this.createQuizService.updateQuiz(
+          this.quizId,
+          this.quizTitle
+      );
+
+      if (success) {
+        this.message = this.domSanitizer.bypassSecurityTrustHtml('<div class="alert alert-success" role="alert"><i class="bi bi-check-circle"></i> Quiz title updated!</div>');
+        this.isError = false;
+        setTimeout(() => 
+          window.location.href=`create-quiz?quiz=${this.quizId}`
+          , 1000);
+
+        // this.quizTitle = "";
+
+      } else {
+        this.message = this.domSanitizer.bypassSecurityTrustHtml('<div class="alert alert-danger" role="alert"><i class="bi bi-exclamation-circle"></i> Error while updating quiz title! Try again...</div>');
+        this.isError = true;
+        setTimeout(() => this.message = "", 3000);
+      }
+      
+    } else {
+      this.message = this.domSanitizer.bypassSecurityTrustHtml('<div class="alert alert-danger" role="alert"><i class="bi bi-x-circle"></i> Please enter quiz title correctly!</div>');
+      this.isError = true;
+      setTimeout(() => this.message = "", 3000);
+    }
   }
 
 }

@@ -8,20 +8,20 @@
 
                 <div class="input-group" style="margin-bottom: 20px;">
                     <span class="input-group-text">User</span>
-                    <input type="text" aria-label="First name" class="form-control" value="{{loggedinUserName}}" disabled style="font-weight: bolder; font-style: italic; color: #00000080;">
-                    <input type="text" aria-label="Last name" class="form-control" value="{{loggedinUserEmail}}" disabled style="font-weight: bolder; font-style: italic; color: #00000080;">
+                    <input type="text" aria-label="First name" class="form-control" value="{{loggedinUserName}}" style="font-style: italic; color: #00000080;" disabled>
+                    <input type="text" aria-label="Last name" class="form-control" value="{{loggedinUserEmail}}" style="font-style: italic; color: #00000080;" disabled>
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-default">Date</span>
-                    <input type="date" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" value="{{quizDate}}" disabled>
+                    <input type="date" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="quizdate" name="quizdate" [(ngModel)]="quizDate" style="font-style: italic; color: #00000080;" disabled>
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-default">Quiz Title</span>
                     <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="quiztitle" name="quiztitle" [(ngModel)]="quizTitle">
                 </div>
             </span>
-            @if (content != "") {
-                <button type="button" class="btn btn-primary" style="background-color: #5b62b3; border: none; margin-left: 20px; margin-bottom: 17px;"><i class="bi bi-plus-square"></i> Update Quiz Title</button>   
+            @if (getQuizId != "") {
+                <button (click)="onUpdate()" type="button" class="btn btn-primary" style="background-color: #5b62b3; border: none; margin-left: 20px; margin-bottom: 17px;"><i class="bi bi-pencil"></i> Update Quiz Title</button>   
             } @else {
                 <button (click)="onSubmit()" type="button" class="btn btn-primary" style="background-color: #5b62b3; border: none; margin-left: 20px; margin-bottom: 17px;"><i class="bi bi-plus-square"></i> Create Quiz</button>  
             }         
@@ -29,6 +29,6 @@
     </div>
 </div>
 
-@if (content != "") {
-<app-quiz-form [quizId]="content"></app-quiz-form>
+@if (getQuizId != "") {
+<app-quiz-form [quizId]="getQuizId"></app-quiz-form>
 }
