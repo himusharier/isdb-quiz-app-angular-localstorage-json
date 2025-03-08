@@ -7,6 +7,7 @@ import { LoggedinUserService } from '../services/loggedin-user/loggedin-user.ser
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { EditProfileComponent } from "../components/edit-profile/edit-profile.component";
+import { Quizzes } from '../model/quizzes.model';
 
 @Component({
   selector: 'app-profile',
@@ -15,6 +16,10 @@ import { EditProfileComponent } from "../components/edit-profile/edit-profile.co
   styleUrl: './profile.component.css'
 })
 export class ProfileComponent implements OnInit {
+  // quizzes: Quizzes = new Quizzes('', '', new Date(), '', '', '');
+
+  myQuizzes: Quizzes[] = [];
+
   loggedinUserId: string = "";
   loggedinUserName: string = "";
   loggedinUserEmail: string = "";
@@ -44,5 +49,8 @@ export class ProfileComponent implements OnInit {
       this.loggedinUserEmail = loggedInUser ? loggedInUser.userEmail : ''; 
     }
 
+    this.myQuizzes = JSON.parse(localStorage.getItem('quizzes') || '[]');
+    // this.myQuizzes = this.myQuizzes.map(x => (x.creatorId == this.loggedinUserId || x.creatorEmail == this.loggedinUserEmail ? x : this.quizzes));
+    this.myQuizzes = this.myQuizzes.filter(x => x.creatorId === this.loggedinUserId || x.creatorEmail === this.loggedinUserEmail);
   }
 }
