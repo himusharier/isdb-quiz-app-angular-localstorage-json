@@ -3,31 +3,32 @@
 <div class="container p-4 pt-0">
     <div class="container-main-div p-3">
         <form class="d-flex align-items-end justify-content-center">
-            <span>
+            <span style="max-width: 700px; width: 100%;">
+                <div *ngIf="message" [class.error]="isError" [class.success]="!isError" [innerHtml]="message"></div>
+
                 <div class="input-group" style="margin-bottom: 20px;">
-                    <span class="input-group-text">Creator Name & Email</span>
+                    <span class="input-group-text">User</span>
                     <input type="text" aria-label="First name" class="form-control" value="{{loggedinUserName}}" disabled style="font-weight: bolder; font-style: italic; color: #00000080;">
                     <input type="text" aria-label="Last name" class="form-control" value="{{loggedinUserEmail}}" disabled style="font-weight: bolder; font-style: italic; color: #00000080;">
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-default">Date</span>
-                    <input type="date" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" value="{{date}}" disabled>
+                    <input type="date" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" value="{{quizDate}}" disabled>
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-default">Quiz Title</span>
-                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="quiztitle" name="quiztitle" [(ngModel)]="quizTitle">
                 </div>
-                <input type="hidden" value="{{loggedinUserId}}">
             </span>
-            @if (content != "404") {
-                <button type="submit" class="btn btn-primary fw-bold" style="background-color: #5b62b3; border: none; margin-left: 20px; margin-bottom: 17px;"><i class="bi bi-plus-square"></i> Update Quiz Title</button>   
+            @if (content != "") {
+                <button type="button" class="btn btn-primary" style="background-color: #5b62b3; border: none; margin-left: 20px; margin-bottom: 17px;"><i class="bi bi-plus-square"></i> Update Quiz Title</button>   
             } @else {
-                <button type="submit" class="btn btn-primary fw-bold" style="background-color: #5b62b3; border: none; margin-left: 20px; margin-bottom: 17px;"><i class="bi bi-plus-square"></i> Create Quiz</button>  
+                <button (click)="onSubmit()" type="button" class="btn btn-primary" style="background-color: #5b62b3; border: none; margin-left: 20px; margin-bottom: 17px;"><i class="bi bi-plus-square"></i> Create Quiz</button>  
             }         
         </form>
     </div>
 </div>
 
-@if (content != "404") {
+@if (content != "") {
 <app-quiz-form [quizId]="content"></app-quiz-form>
 }
