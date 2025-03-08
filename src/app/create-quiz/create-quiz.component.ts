@@ -10,6 +10,7 @@ import { CreateQuizService } from '../services/create-quiz/create-quiz.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Quizzes } from '../model/quizzes.model';
+import * as bootstrap from 'bootstrap';
 
 @Component({
   selector: 'app-create-quiz',
@@ -70,11 +71,8 @@ export class CreateQuizComponent implements OnInit {
     const currentDate = new Date();
     this.quizDate = currentDate.toISOString().split('T')[0];
 
-    // Retrieve quiz title from localStorage
     const quizzesList: Quizzes[] = JSON.parse(localStorage.getItem('quizzes') || '[]')
-    // Find the quiz based on quizId (the one that matches the content query parameter)
     const quiz = quizzesList.find(x => x.quizId === this.getQuizId);
-    // If the quiz exists, set the quizTitle
     if (quiz) {
       this.quizTitle = quiz.quizTitle;
       this.quizDate = quiz.quizDate;
@@ -134,7 +132,6 @@ export class CreateQuizComponent implements OnInit {
         setTimeout(() => 
           window.location.href=`create-quiz?quiz=${this.quizId}`
           , 1000);
-
         // this.quizTitle = "";
 
       } else {
@@ -148,6 +145,23 @@ export class CreateQuizComponent implements OnInit {
       this.isError = true;
       setTimeout(() => this.message = "", 3000);
     }
+  }
+
+  private modal: bootstrap.Modal | null = null;
+
+  openDeleteModal() {
+    const confirmationModal = document.getElementById('deleteConfirmationModal');
+    if (confirmationModal) {
+      this.modal = new bootstrap.Modal(confirmationModal);
+      this.modal.show();
+    }
+  }
+
+  deleteRecord(quizId: string): void {
+    const quizzes = JSON.parse(localStorage.getItem('quizzes') || '[]');
+    const updatedQuizzes = quizzes.filter((x: { quizId: string; }) => x.quizId !== this.quizId);
+    localStorage.setItem('quizzes', JSON.stringify(updatedQuizzes));
+    window.location.href="/profile";
   }
 
 }

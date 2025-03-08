@@ -21,7 +21,10 @@
                 </div>
             </span>
             @if (getQuizId != "") {
-                <button (click)="onUpdate()" type="button" class="btn btn-primary" style="background-color: #5b62b3; border: none; margin-left: 20px; margin-bottom: 17px;"><i class="bi bi-pencil"></i> Update Quiz Title</button>   
+                <span>
+                    <button (click)="onUpdate()" type="button" class="btn btn-primary" style="background-color: #5b62b3; border: none; margin-left: 20px; margin-bottom: 17px;"><i class="bi bi-pencil"></i> Update Quiz Title</button>
+                    <button (click)="openDeleteModal()" class="btn btn-danger" style="border: none; margin-left: 10px; margin-bottom: 17px;"><i class="bi bi-trash"></i></button>
+                </span>                
             } @else {
                 <button (click)="onSubmit()" type="button" class="btn btn-primary" style="background-color: #5b62b3; border: none; margin-left: 20px; margin-bottom: 17px;"><i class="bi bi-plus-square"></i> Create Quiz</button>  
             }         
@@ -32,3 +35,23 @@
 @if (getQuizId != "") {
 <app-quiz-form [quizId]="getQuizId"></app-quiz-form>
 }
+
+
+<!-- Delete Confirmation Modal -->
+<div class="modal fade" id="deleteConfirmationModal" tabindex="-1" aria-labelledby="deleteConfirmationModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="deleteConfirmationModalLabel">Confirm Deletion</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Are you sure you want to delete this quiz?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-danger" (click)="deleteRecord(quizId)">Delete</button>
+        </div>
+      </div>
+    </div>
+</div>
