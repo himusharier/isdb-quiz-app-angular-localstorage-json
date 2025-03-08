@@ -1,14 +1,16 @@
 <app-navbar></app-navbar>
 <app-header></app-header>
 <div class="container p-4 pt-0">
+    @if (quizzes.length > 0) {
+        @for (quiz of quizzes; track quiz.quizId) {
     <div class="d-flex justify-content-between" style="border-bottom: 1px solid #ccc; margin-top: 20px;">
         <span>
-            <h5>Module: Angular (Mid-monthly, February 2025)</h5>
+            <h5>{{quiz.quizTitle}}</h5>
             <p style="font-size: 14px;">
                 <i class="bi bi-person"></i>
-                Sharier Himu,
+                {{quiz.creatorName}},
                 <i class="bi bi-calendar4-week"></i>
-                03/03/2025,
+                {{quiz.quizDate | date: 'dd/MM/yyyy'}},
                 <i class="bi bi-balloon"></i>
                 20 Questions,
                 <i class="bi bi-person-raised-hand"></i>
@@ -16,49 +18,22 @@
             </p>
         </span>
         <span class="gap-3">
-            <!-- <a href="/quiz" class="btn btn-primary fw-bold" style="background-color: #5b62b3; border: none; margin-left: 10px;">
-                <i class="bi bi-pencil"></i>
-                Edit
-            </a> -->
-            <a href="/quiz" class="btn btn-primary fw-bold" style="background-color: #5b62b3; border: none; margin-left: 10px;">
+            <a href="/quiz" class="btn btn-primary" style="background-color: #5b62b3; border: none; margin-left: 10px;">
                 <i class="bi bi-box-arrow-up-right"></i>
                 Attend
             </a>
-            <a href="/quiz" class="btn btn-primary fw-bold" style="background-color: #5b62b3; border: none; margin-left: 10px;" data-bs-toggle="modal" data-bs-target="#exampleModal3">
+            <a href="/quiz" class="btn btn-primary" style="background-color: #5b62b3; border: none; margin-left: 10px;" data-bs-toggle="modal" data-bs-target="#exampleModal3">
                 <i class="bi bi-boxes"></i>
                 Scoreboard
             </a>
         </span>
     </div>
-    <div class="d-flex justify-content-between" style="border-bottom: 1px solid #ccc; margin-top: 20px;">
-        <span>
-            <h5>Module: Angular (Mid-monthly, February 2025)</h5>
-            <p style="font-size: 14px;">
-                <i class="bi bi-person"></i>
-                Sharier Himu,
-                <i class="bi bi-calendar4-week"></i>
-                03/03/2025,
-                <i class="bi bi-balloon"></i>
-                20 Questions,
-                <i class="bi bi-person-raised-hand"></i>
-                8 Attendees
-            </p>
-        </span>
-        <span class="gap-3">
-            <!-- <a href="/quiz" class="btn btn-primary fw-bold" style="background-color: #5b62b3; border: none; margin-left: 10px;">
-                <i class="bi bi-pencil"></i>
-                Edit
-            </a> -->
-            <a href="/quiz" class="btn btn-primary fw-bold" style="background-color: #5b62b3; border: none; margin-left: 10px;">
-                <i class="bi bi-box-arrow-up-right"></i>
-                Attend
-            </a>
-            <a href="/quiz" class="btn btn-primary fw-bold" style="background-color: #5b62b3; border: none; margin-left: 10px;" data-bs-toggle="modal" data-bs-target="#exampleModal3">
-                <i class="bi bi-boxes"></i>
-                Scoreboard
-            </a>
-        </span>
+        }
+    } @else {
+    <div class="alert alert-warning mt-4">
+        <p>No quiz found!</p>
     </div>
+    }
 </div>
 
 
