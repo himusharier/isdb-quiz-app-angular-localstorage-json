@@ -1,0 +1,33 @@
+/* Parent list (questions) will be numbered 1, 2, 3, etc. */
+.list-ordered {
+    counter-reset: item;
+  }
+  
+  .list-ordered > li {
+    counter-increment: item;
+    font-size: 22px;
+  }
+  
+  /* Child list (options) will be lettered a, b, c, etc. */
+  .list-letters {
+    list-style-type: none;  /* Remove default list styling */
+    counter-reset: option;
+    font-size: 16px;
+  }
+  
+  .list-letters .list-group-item {
+    counter-increment: option;
+  }
+  
+  .list-letters .list-group-item::before {
+    content: counter(option, lower-alpha) ". "; /* Use lowercase letters (a, b, c, ...) */
+  }
+
+  .question-card {
+    margin-top: -20px;
+  }
+
+  .question-div {
+    padding: 10px 20px;
+  }
+  

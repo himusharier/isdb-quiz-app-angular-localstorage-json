@@ -1,7 +1,69 @@
 <div class="container p-4 pt-0" style="margin-top: -20px;">
     <div class="container-main-div p-3">
-        <form class="d-flex align-items-end justify-content-center">
-            <p>quiz id: {{quizId}}</p>           
+        <form [formGroup]="questionForm" (ngSubmit)="onSubmit()" style="max-width: 760px; border-left: 3px solid #F49291; margin-left: -16px;">
+            <div class="mb-3 row form-group">
+                <label for="question" class="col-sm-2 col-form-label text-end">Question:</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="question" formControlName="question">
+                </div>
+            </div>
+            
+            <div formArrayName="options" class="form-group">
+                <div *ngFor="let option of options.controls; let i = index" [formGroupName]="i" class="mb-3 row">
+                    <label for="option{{ i }}" class="col-sm-2 col-form-label text-end">Option {{ i + 1 }}:</label>
+                    <div class="col-sm-10 d-flex">
+                        <input type="text" class="form-control" id="option{{ i }}" formControlName="optionText">
+                        <a type="button" (click)="removeOption(i)" *ngIf="options.length > 1" class="btn">
+                            <i class="bi bi-trash-fill" style="color: #BB2D3B;"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <button type="button" class="btn btn-secondary" (click)="addOption()" style="background-color: inherit; color: #5b62b3; margin-left: 130px; padding: 0; margin-top: -10px; margin-bottom: 20px; border: 0;">
+                <i class="bi bi-plus-lg"></i> Add Option
+            </button>
+
+            <div class="mb-3 row form-group">
+                <label for="correctAnswer" class="col-sm-2 col-form-label text-end">Answer:</label>
+                <div class="col-sm-10">
+                    <select id="correctAnswer" formControlName="correctAnswer" class="form-control">
+                        <option value="" disabled selected>-- select the answer --</option>
+                        <option *ngFor="let option of options.controls; let i = index" [value]="option.value.optionText">
+                            {{ option.value.optionText }}
+                        </option>
+                    </select>
+                </div>
+            </div>
+            
+            
+            
+            <div style="margin-left: 130px;">
+                <button type="submit" class="btn btn-primary" [disabled]="questionForm.invalid">Add Question</button>
+            </div>
         </form>
+
+        <hr style="border-bottom: 1px solid #eee; margin: 50px 0;">
+
+        <div class="question-card">
+            <ol class="list-ordered">
+                <li *ngFor="let question of questions; let i = index" class="question-div">
+                    {{ question.question }}
+                    <!-- Delete button next to the question -->
+                    <button type="button" class="btn btn-danger btn-sm" (click)="deleteQuestion(i)" style="background-color: initial; color: #BB2D3B;">
+                        <i class="bi bi-trash-fill"></i>
+                    </button>
+                    <ol class="list-group-flush list-letters">
+                        <li *ngFor="let option of question.options; let i = index" class="list-group-item">
+                            {{ option }}
+                            <!-- Add "(Answer)" next to the correct answer -->
+                            <span *ngIf="option === question.correctAnswer" class="text-success">(Answer)</span>
+                        </li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+        
+        
     </div>
 </div>
