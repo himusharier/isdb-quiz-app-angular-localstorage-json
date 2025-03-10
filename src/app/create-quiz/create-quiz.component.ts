@@ -102,8 +102,8 @@ export class CreateQuizComponent implements OnInit {
         setTimeout(() => 
           window.location.href=`create-quiz?quiz=${this.quizId}`
           , 1000);
-
         // this.quizTitle = "";
+        localStorage.setItem(this.quizId, '[]');
 
       } else {
         this.message = this.domSanitizer.bypassSecurityTrustHtml('<div class="alert alert-danger" role="alert"><i class="bi bi-exclamation-circle"></i> Error while creating quiz! Try again...</div>');
@@ -162,6 +162,7 @@ export class CreateQuizComponent implements OnInit {
     const updatedQuizzes = quizzes.filter((x: { quizId: string; }) => x.quizId !== this.quizId);
     localStorage.setItem('quizzes', JSON.stringify(updatedQuizzes));
     window.location.href="/profile";
+    localStorage.removeItem(this.quizId);
   }
 
 }
