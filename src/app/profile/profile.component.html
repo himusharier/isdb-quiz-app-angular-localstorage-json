@@ -2,20 +2,20 @@
 <app-header></app-header>
 <div class="container p-4 pt-0">
     <div class="container-main-div p-3">
-        <div class="d-flex align-items-center" style="border-bottom: 2px solid #F49291;">
+        <div class="d-flex align-items-center" style="border-bottom: 2px solid #ff8482;">
             <div>
                 <i class="bi bi-person" style="font-size: 76px;"></i>                
             </div>
             <div style="margin-top: 20px; margin-left: 20px;">
                 <h3>
                     {{loggedinUserName | titlecase}} 
-                    <i class="bi bi-pencil-square" style="color: #F49291;cursor: pointer;" data-bs-toggle="modal" data-bs-target="#edit-profile-modal"></i>
+                    <i class="bi bi-pencil-square" style="color: #ff8482;cursor: pointer;" data-bs-toggle="modal" data-bs-target="#edit-profile-modal"></i>
                 </h3>
                 <p>{{loggedinUserEmail | lowercase}}</p>
             </div>
         </div>
         <div class="mt-4">
-            <h4 style="color: #F49291;">Your Quizzes</h4>
+            <h4 style="color: #ff8482;">Your Quizzes</h4>
             @if (myQuizzes.length > 0) {
                 @for (quiz of myQuizzes; track quiz.quizId) {
                     <div class="d-flex justify-content-between" style="border-bottom: 1px solid #ccc; margin-top: 20px;">
