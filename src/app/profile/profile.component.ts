@@ -53,4 +53,10 @@ export class ProfileComponent implements OnInit {
     // this.myQuizzes = this.myQuizzes.map(x => (x.creatorId == this.loggedinUserId || x.creatorEmail == this.loggedinUserEmail ? x : this.quizzes));
     this.myQuizzes = this.myQuizzes.filter(x => x.creatorId === this.loggedinUserId || x.creatorEmail === this.loggedinUserEmail);
   }
+
+  getQuestionCount(quizId: string): string {
+    const data = JSON.parse(localStorage.getItem(quizId) || '[]'); 
+    return data.length;
+  }
+
 }

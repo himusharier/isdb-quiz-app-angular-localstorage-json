@@ -30,4 +30,10 @@ export class QuizComponent implements OnInit {
 
     this.quizzes = JSON.parse(localStorage.getItem('quizzes') || '[]');
   }
+
+  getQuestionCount(quizId: string): string {
+    const data = JSON.parse(localStorage.getItem(quizId) || '[]'); 
+    return data.length;
+  }
+
 }

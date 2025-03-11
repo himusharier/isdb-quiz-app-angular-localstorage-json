@@ -27,7 +27,7 @@
                         <i class="bi bi-calendar4-week"></i>
                         {{quiz.quizDate | date: 'dd/MM/yyyy'}},
                         <i class="bi bi-balloon"></i>
-                        20 Questions,
+                        {{getQuestionCount(quiz.quizId)}} Questions,
                         <i class="bi bi-person-raised-hand"></i>
                         8 Attendees
                     </p>
