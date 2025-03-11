@@ -1,5 +1,10 @@
 <app-navbar></app-navbar>
 <app-header></app-header>
+@if (getQuizId != "") {
+<app-quiz-test [quizId]="getQuizId"></app-quiz-test>
+
+} @else {
+
 <div class="container p-4 pt-0">
     @if (quizzes.length > 0) {
         @for (quiz of quizzes; track quiz.quizId) {
@@ -18,7 +23,11 @@
             </p>
         </span>
         <span class="gap-3">
-            <a href="/quiz" class="btn btn-primary" style="background-color: #5b62b3; border: none; margin-left: 10px;">
+            <!-- <a href="/quiz?test={{quiz.quizId}}" class="btn btn-primary" style="background-color: #5b62b3; border: none; margin-left: 10px;">
+                <i class="bi bi-box-arrow-up-right"></i>
+                Attend
+            </a> -->
+            <a (click)="joiningQuiz(quiz.quizId)" class="btn btn-primary" style="background-color: #5b62b3; border: none; margin-left: 10px;">
                 <i class="bi bi-box-arrow-up-right"></i>
                 Attend
             </a>
@@ -54,3 +63,5 @@
       </div>
     </div>
 </div>
+
+}

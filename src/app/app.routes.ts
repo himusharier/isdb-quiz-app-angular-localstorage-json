@@ -12,6 +12,6 @@ export const routes: Routes = [
     {path: 'quiz', pathMatch: 'full', component: QuizComponent},
     {path: 'create-quiz', pathMatch: 'full', component: CreateQuizComponent},
     {path: 'profile', pathMatch: 'full', component: ProfileComponent},
-    {path: 'json-upload', pathMatch: 'full', component: JsonUploadComponent}, // to load json data into localstorage only.
+    {path: 'json-upload', pathMatch: 'full', component: JsonUploadComponent}, // to load json data
     {path: '**', component: ErrorComponent}
 ];

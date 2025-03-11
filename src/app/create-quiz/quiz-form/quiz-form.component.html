@@ -28,7 +28,7 @@
                 <label for="correctAnswer" class="col-sm-2 col-form-label text-end">Answer:</label>
                 <div class="col-sm-10">
                     <select id="correctAnswer" formControlName="correctAnswer" class="form-control">
-                        <option value="" disabled selected>-- select the answer --</option>
+                        <option value="" disabled selected>-- select correct answer --</option>
                         <option *ngFor="let option of options.controls; let i = index" [value]="option.value.optionText">
                             {{ option.value.optionText }}
                         </option>
