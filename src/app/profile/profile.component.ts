@@ -59,4 +59,9 @@ export class ProfileComponent implements OnInit {
     return data.length;
   }
 
+  getAttendeeCount(quizId: string): number {
+    const currentScoreboard: any[] = JSON.parse(localStorage.getItem(`scoreboard-${quizId}`) || '[]');
+    return currentScoreboard.length;
+  }
+
 }

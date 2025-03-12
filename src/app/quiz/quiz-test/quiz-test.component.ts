@@ -112,4 +112,5 @@ export class QuizTestComponent implements OnInit {
     // Show results to the user
     this.showResults = true;
   }
+  
 }

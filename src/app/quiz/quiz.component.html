@@ -18,7 +18,7 @@
                 <i class="bi bi-balloon"></i>
                 {{getQuestionCount(quiz.quizId)}} Questions,
                 <i class="bi bi-person-raised-hand"></i>
-                8 Attendees
+                {{getAttendeeCount(quiz.quizId)}} Attendees
             </p>
         </span>
         <span class="gap-3">
@@ -30,7 +30,7 @@
                 <i class="bi bi-box-arrow-up-right"></i>
                 Attend
             </a>
-            <a (click)="showLeaderboard(quiz.quizId)" class="btn btn-primary" style="background-color: #5b62b3; border: none; margin-left: 10px;" data-bs-toggle="modal"   data-bs-target="#exampleModal3">
+            <a (click)="showScoreboard(quiz.quizId, quiz.quizTitle)" class="btn btn-primary" style="background-color: #5b62b3; border: none; margin-left: 10px;" data-bs-toggle="modal"   data-bs-target="#exampleModal3">
                 <i class="bi bi-boxes"></i>
                 Scoreboard
               </a>
@@ -44,7 +44,6 @@
     }
 </div>
 
-
 <!-- Modal -->
 <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel3" aria-hidden="true">
     <div class="modal-dialog">
@@ -54,7 +53,8 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <table *ngIf="leaderboard.length > 0">
+            <h5><i class="bi bi-hash" style="color: #ff8482"></i> {{getQuizTitle}}</h5>
+          <table *ngIf="scoreboard.length > 0">
             <thead>
               <tr>
                 <th>Name</th>
@@ -62,13 +62,13 @@
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let record of leaderboard">
+              <tr *ngFor="let record of scoreboard">
                 <td>{{ record.userName }}</td>
                 <td>{{ record.score }} / {{ record.totalQuestions }}</td>
               </tr>
             </tbody>
           </table>
-          <p *ngIf="leaderboard.length === 0">No leaderboard data available.</p>
+          <p *ngIf="scoreboard.length === 0" class="text-warning-emphasis pt-3"><i class="bi bi-exclamation-triangle"></i> No scoreboard data available.</p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

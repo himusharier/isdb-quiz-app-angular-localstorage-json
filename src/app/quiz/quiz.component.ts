@@ -21,7 +21,7 @@ export class QuizComponent implements OnInit {
   quizzes: Quizzes[] = [];
   getQuizId: string = "";
   getQuizTitle: string = "";
-  leaderboard: any[] = [];
+  scoreboard: any[] = [];
 
   constructor(
     private headerTitleService: HeaderTitleService,
@@ -71,15 +71,21 @@ export class QuizComponent implements OnInit {
         }
   }
 
-  // Show the leaderboard for a specific quiz
-  showLeaderboard(quizId: string): void {
+  // Show the scoreboard for a specific quiz
+  showScoreboard(quizId: string, quizTitle: string): void {
     const scoreboardData = JSON.parse(localStorage.getItem(`scoreboard-${quizId}`) || '[]');
-    this.leaderboard = scoreboardData;
+    this.scoreboard = scoreboardData;
+    this.getQuizTitle = quizTitle;
   }
 
   // Optionally, you can also add logic to handle the modal closing
-  closeLeaderboard(): void {
-    this.leaderboard = [];
+  closeScoreboard(): void {
+    this.scoreboard = [];
+  }
+
+  getAttendeeCount(quizId: string): number {
+    const currentScoreboard: any[] = JSON.parse(localStorage.getItem(`scoreboard-${quizId}`) || '[]');
+    return currentScoreboard.length;
   }
 
 }
