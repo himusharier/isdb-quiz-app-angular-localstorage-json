@@ -1,19 +1,18 @@
-<app-navbar></app-navbar>
-<app-header></app-header>
 @if (getQuizId != "") {
 <app-quiz-test [quizId]="getQuizId"></app-quiz-test>
 
 } @else {
-
+<app-navbar></app-navbar>
+<app-header></app-header>
 <div class="container p-4 pt-0">
     @if (quizzes.length > 0) {
         @for (quiz of quizzes; track quiz.quizId) {
     <div class="d-flex justify-content-between" style="border-bottom: 1px solid #ccc; margin-top: 20px;">
         <span>
-            <h5>{{quiz.quizTitle}}</h5>
+            <h5>{{quiz.quizTitle | titlecase}}</h5>
             <p style="font-size: 14px;">
                 <i class="bi bi-person"></i>
-                {{quiz.creatorName}},
+                {{quiz.creatorName | titlecase}},
                 <i class="bi bi-calendar4-week"></i>
                 {{quiz.quizDate | date: 'dd/MM/yyyy'}},
                 <i class="bi bi-balloon"></i>
@@ -31,10 +30,10 @@
                 <i class="bi bi-box-arrow-up-right"></i>
                 Attend
             </a>
-            <a href="/quiz" class="btn btn-primary" style="background-color: #5b62b3; border: none; margin-left: 10px;" data-bs-toggle="modal" data-bs-target="#exampleModal3">
+            <a (click)="showLeaderboard(quiz.quizId)" class="btn btn-primary" style="background-color: #5b62b3; border: none; margin-left: 10px;" data-bs-toggle="modal"   data-bs-target="#exampleModal3">
                 <i class="bi bi-boxes"></i>
                 Scoreboard
-            </a>
+              </a>
         </span>
     </div>
         }
@@ -55,13 +54,27 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          ...
+          <table *ngIf="leaderboard.length > 0">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Score</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let record of leaderboard">
+                <td>{{ record.userName }}</td>
+                <td>{{ record.score }} / {{ record.totalQuestions }}</td>
+              </tr>
+            </tbody>
+          </table>
+          <p *ngIf="leaderboard.length === 0">No leaderboard data available.</p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         </div>
       </div>
     </div>
-</div>
+  </div>
 
 }

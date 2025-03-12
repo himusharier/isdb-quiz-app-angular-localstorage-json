@@ -20,6 +20,8 @@ import * as bootstrap from 'bootstrap';
 export class QuizComponent implements OnInit {
   quizzes: Quizzes[] = [];
   getQuizId: string = "";
+  getQuizTitle: string = "";
+  leaderboard: any[] = [];
 
   constructor(
     private headerTitleService: HeaderTitleService,
@@ -44,6 +46,10 @@ export class QuizComponent implements OnInit {
     this.quizzes = JSON.parse(localStorage.getItem('quizzes') || '[]');
   }
 
+  GettingQuizTitle(quizTitle: string): void {
+    this.getQuizTitle = quizTitle;
+  }
+
   getQuestionCount(quizId: string): string {
     const data = JSON.parse(localStorage.getItem(quizId) || '[]'); 
     return data.length;
@@ -63,6 +69,17 @@ export class QuizComponent implements OnInit {
             this.modal.show();
           }
         }
+  }
+
+  // Show the leaderboard for a specific quiz
+  showLeaderboard(quizId: string): void {
+    const scoreboardData = JSON.parse(localStorage.getItem(`scoreboard-${quizId}`) || '[]');
+    this.leaderboard = scoreboardData;
+  }
+
+  // Optionally, you can also add logic to handle the modal closing
+  closeLeaderboard(): void {
+    this.leaderboard = [];
   }
 
 }

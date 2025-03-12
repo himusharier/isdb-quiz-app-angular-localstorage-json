@@ -1,0 +1,43 @@
+.question-card {
+    padding: 10px 0;
+}
+.options {
+    margin-left: 20px;
+}
+.options input[type="radio"] {
+    margin-right: 10px;
+}
+.submit-btn {
+    margin-top: 10px;
+    border-top: 1px solid #ccc;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.score {
+    padding: 20px;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+.score table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+.score table td {
+    padding: 8px;
+    text-align: left;
+    font-size: 16px;
+    color: #333;
+  }
+  
+.score table td:first-child {
+    font-weight: bold;
+    color: #555;
+  }
+  
+.score table td:last-child {
+    color: #666;
+  }
+  

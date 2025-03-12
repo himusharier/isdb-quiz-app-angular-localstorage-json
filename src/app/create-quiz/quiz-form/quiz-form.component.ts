@@ -68,8 +68,9 @@ export class QuizFormComponent implements OnInit {
 
     const formData = this.questionForm.value;
 
-    // Create a new question object
+    // Create a new question object with a unique questionId
     const newQuestion = {
+      questionId: new Date().getTime(),  // Unique questionId based on timestamp
       question: formData.question,
       options: formData.options.map((opt: { optionText: string }) => opt.optionText),
       correctAnswer: formData.correctAnswer
@@ -87,14 +88,17 @@ export class QuizFormComponent implements OnInit {
     this.addOption();
   }
 
-  // Delete a question
-  deleteQuestion(index: number): void {
-    // Remove the question from the questions array
-    this.questions.splice(index, 1);
-
-    // Update the local storage with the updated questions array
-    localStorage.setItem(this.quizId, JSON.stringify(this.questions));
+  // Delete a question by its ID
+  deleteQuestion(questionId: number): void {
+    // Find the index of the question by its questionId
+    const index = this.questions.findIndex(q => q.questionId === questionId);
+    
+    if (index !== -1) {
+      // Remove the question from the array
+      this.questions.splice(index, 1);
+      
+      // Update the local storage with the updated questions array
+      localStorage.setItem(this.quizId, JSON.stringify(this.questions));
+    }
   }
-
-
 }

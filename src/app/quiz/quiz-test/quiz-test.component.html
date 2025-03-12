@@ -1,1 +1,54 @@
-<p>quiz-test works!</p>
+<app-navbar></app-navbar>
+<app-header></app-header>
+<div class="container p-4 pt-0">
+    <div class="container-main-div p-3">
+        <div class="container">
+            <form [formGroup]="quizForm" (ngSubmit)="onSubmit()">
+                <div class="quiz-card" *ngIf="!showResults">
+                    <span class="d-flex flex-column" style="margin-left: -10px; border-bottom: 1px solid #ccc; padding:  0 0 10px 0;">                 
+                        <h4 class="quiz-title"><i class="bi bi-hash fs-5" style="color: #ff8482;"></i> {{getQuizTitle | titlecase}}</h4>
+                        <span style="margin-left: 25px; color: #8b8b8b;">
+                            <i class="bi bi-balloon"></i>
+                            {{getQuestionCount(quizId)}} Questions
+                        </span>
+                    </span>
+
+                    <div *ngFor="let i of questionSet" class="question">
+                        <div class="question-card">
+                            <h5 class="question-text">{{questionSet.indexOf(i)+1}}. {{ i.question }}</h5>
+                            <div class="options">
+                                <div *ngFor="let option of i.options">
+                                    <input type="radio" [formControlName]="i.questionId" [value]="option" id="{{ i.questionId }}_{{ option }}">
+                                    <label for="{{ i.questionId }}_{{ option }}">{{ option }}</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="submit-btn">
+                        <button type="submit" class="btn btn-primary"><i class="bi bi-send"></i> Submit Quiz</button>
+                    </div>
+                </div>
+            </form>
+
+            <div *ngIf="showResults" class="score">
+                <h4 class="text-success"><i class="bi bi-check-lg"></i> Quiz submitted successfully!</h4>
+                <table>
+                    <tr>
+                        <td>Name</td>
+                        <td>{{loggedinUserName}}</td>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td>{{loggedinUserEmail}}</td>
+                    </tr>
+                    <tr>
+                        <td>Score</td>
+                        <td>{{ score }} / {{ questionSet.length }}</td>
+                    </tr>
+                </table>
+                <a routerLink="/quiz" class="btn btn-primary" style="background-color: #5b62b3; border: none; margin-top: 50px; margin-left: 5px;"><i class="bi bi-arrow-left"></i> Back To Quizzes</a>
+            </div>
+        </div>
+    </div>
+</div>
