@@ -1,66 +1,42 @@
 [
-    {
-      "quizId": "853014",
-      "quizTitle": "my quiz title",
-      "quizDate": "2025-03-08T06:59:19.385Z",
-      "creatorName": "Sharier Himu",
-      "creatorEmail": "himusharier@gmail.com",
-      "creatorId": "191377"
-    },
-    {
-      "quizId": "934411",
-      "quizTitle": "my quiz title 2",
-      "quizDate": "2025-03-08T07:28:47.610Z",
-      "creatorName": "Sharier Himu",
-      "creatorEmail": "himusharier@gmail.com",
-      "creatorId": "191377"
-    },
-    {
-      "quizId": "351363",
-      "quizTitle": "erge",
-      "quizDate": "2025-03-08T08:16:52.171Z",
-      "creatorName": "Sharier Himu",
-      "creatorEmail": "himusharier@gmail.com",
-      "creatorId": "191377"
-    },
-    {
-      "quizId": "351363",
-      "quizTitle": "erge",
-      "quizDate": "2025-03-08T08:16:52.171Z",
-      "creatorName": "Sharier Himu",
-      "creatorEmail": "himusharier@gmail.com",
-      "creatorId": "191377"
-    },
-    {
-      "quizId": "498882",
-      "quizTitle": "my quiz title",
-      "quizDate": "2025-03-08T08:20:28.530Z",
-      "creatorName": "Sharier Kabir",
-      "creatorEmail": "razonsharier@gmail.com",
-      "creatorId": "899834"
-    },
-    {
-      "quizId": "698695",
-      "quizTitle": "my quiz title",
-      "quizDate": "2025-03-08",
-      "creatorName": "Sharier Kabir",
-      "creatorEmail": "razonsharier@gmail.com",
-      "creatorId": "899834"
-    },
-    {
-      "quizId": "118019",
-      "quizTitle": "my quiz title",
-      "quizDate": "2025-03-08",
-      "creatorName": "Sharier Kabir",
-      "creatorEmail": "razonsharier@gmail.com",
-      "creatorId": "899834"
-    },
-    {
-      "quizId": "597550",
-      "quizTitle": "my quiz title",
-      "quizDate": "2025-03-06",
-      "creatorName": "Sharier Kabir",
-      "creatorEmail": "razonsharier@gmail.com",
-      "creatorId": "899834"
-    }
-  ]
+  {
+    "quizId": "853014",
+    "quizTitle": "General Knowledge Quiz",
+    "quizDate": "2025-03-08T06:59:19.385Z",
+    "creatorName": "Iqram Hossen",
+    "creatorEmail": "iqramhossen@mail.com",
+    "creatorId": "384935"
+  },
+  {
+    "quizId": "934411",
+    "quizTitle": "Science and Nature Quiz",
+    "quizDate": "2025-03-08T07:28:47.610Z",
+    "creatorName": "Omar Faruk",
+    "creatorEmail": "omarfaruk@mail.com",
+    "creatorId": "204727"
+  },
+  {
+    "quizId": "351363",
+    "quizTitle": "History and Geography Quiz",
+    "quizDate": "2025-03-08T08:16:52.171Z",
+    "creatorName": "Sharier Kabir",
+    "creatorEmail": "sharierkabir@mail.com",
+    "creatorId": "130695"
+  },
+  {
+    "quizId": "498882",
+    "quizTitle": "Sports and Entertainment Quiz",
+    "quizDate": "2025-03-08T08:20:28.530Z",
+    "creatorName": "Faysal Hossen",
+    "creatorEmail": "faysalhossen@mail.com",
+    "creatorId": "308338"
+  },
+  {
+    "quizId": "698695",
+    "quizTitle": "Literature Quiz",
+    "quizDate": "2025-03-08",
+    "creatorName": "Zakaria",
+    "creatorEmail": "zakaria@mail.com",
+    "creatorId": "296678"
+  }
+]

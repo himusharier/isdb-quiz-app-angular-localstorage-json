@@ -1,0 +1,52 @@
+[
+  {
+    "questionId": 1,
+    "question": "Who was the first President of the United States?",
+    "options": [
+      "Thomas Jefferson",
+      "Abraham Lincoln",
+      "George Washington"
+    ],
+    "correctAnswer": "George Washington"
+  },
+  {
+    "questionId": 2,
+    "question": "In which year did World War II end?",
+    "options": [
+      "1942",
+      "1945",
+      "1950"
+    ],
+    "correctAnswer": "1945"
+  },
+  {
+    "questionId": 3,
+    "question": "Which country is known as the Land of the Pharaohs?",
+    "options": [
+      "Greece",
+      "Egypt",
+      "Rome"
+    ],
+    "correctAnswer": "Egypt"
+  },
+  {
+    "questionId": 4,
+    "question": "Which continent is the Sahara Desert located on?",
+    "options": [
+      "Africa",
+      "Asia",
+      "North America"
+    ],
+    "correctAnswer": "Africa"
+  },
+  {
+    "questionId": 5,
+    "question": "What was the name of the ship that brought the Pilgrims to America in 1620?",
+    "options": [
+      "Mayflower",
+      "Santa Maria",
+      "Titanic"
+    ],
+    "correctAnswer": "Mayflower"
+  }
+]

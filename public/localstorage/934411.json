@@ -1,0 +1,102 @@
+[
+  {
+    "questionId": 1,
+    "question": "What is the chemical symbol for water?",
+    "options": [
+      "O2",
+      "H2O",
+      "CO2"
+    ],
+    "correctAnswer": "H2O"
+  },
+  {
+    "questionId": 2,
+    "question": "What is the process by which plants make their own food?",
+    "options": [
+      "Photosynthesis",
+      "Respiration",
+      "Fermentation"
+    ],
+    "correctAnswer": "Photosynthesis"
+  },
+  {
+    "questionId": 3,
+    "question": "What is the most common gas in Earth's atmosphere?",
+    "options": [
+      "Oxygen",
+      "Nitrogen",
+      "Carbon Dioxide"
+    ],
+    "correctAnswer": "Nitrogen"
+  },
+  {
+    "questionId": 4,
+    "question": "What planet is closest to the sun?",
+    "options": [
+      "Earth",
+      "Mercury",
+      "Venus"
+    ],
+    "correctAnswer": "Mercury"
+  },
+  {
+    "questionId": 5,
+    "question": "What is the largest organ in the human body?",
+    "options": [
+      "Heart",
+      "Liver",
+      "Skin"
+    ],
+    "correctAnswer": "Skin"
+  },
+  {
+    "questionId": 6,
+    "question": "Which planet is known as the 'Gas Giant'?",
+    "options": [
+      "Earth",
+      "Saturn",
+      "Mars"
+    ],
+    "correctAnswer": "Saturn"
+  },
+  {
+    "questionId": 7,
+    "question": "What is the chemical element with the symbol 'O'?",
+    "options": [
+      "Oxygen",
+      "Osmium",
+      "Ozone"
+    ],
+    "correctAnswer": "Oxygen"
+  },
+  {
+    "questionId": 8,
+    "question": "What is the boiling point of water in Fahrenheit?",
+    "options": [
+      "212°F",
+      "100°F",
+      "0°F"
+    ],
+    "correctAnswer": "212°F"
+  },
+  {
+    "questionId": 9,
+    "question": "How many bones are in the adult human body?",
+    "options": [
+      "206",
+      "220",
+      "200"
+    ],
+    "correctAnswer": "206"
+  },
+  {
+    "questionId": 10,
+    "question": "Which animal is known to have the longest lifespan?",
+    "options": [
+      "Whale",
+      "Elephant",
+      "Tortoise"
+    ],
+    "correctAnswer": "Tortoise"
+  }
+]

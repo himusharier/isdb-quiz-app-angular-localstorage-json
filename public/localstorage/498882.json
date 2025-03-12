@@ -1,0 +1,102 @@
+[
+  {
+    "questionId": 1,
+    "question": "Who holds the record for the most goals in a single World Cup tournament?",
+    "options": [
+      "Marta",
+      "Pele",
+      "Just Fontaine"
+    ],
+    "correctAnswer": "Just Fontaine"
+  },
+  {
+    "questionId": 2,
+    "question": "Which country hosted the 2016 Summer Olympics?",
+    "options": [
+      "China",
+      "Brazil",
+      "Russia"
+    ],
+    "correctAnswer": "Brazil"
+  },
+  {
+    "questionId": 3,
+    "question": "Who won the Academy Award for Best Actor in 2020?",
+    "options": [
+      "Leonardo DiCaprio",
+      "Joaquin Phoenix",
+      "Brad Pitt"
+    ],
+    "correctAnswer": "Joaquin Phoenix"
+  },
+  {
+    "questionId": 4,
+    "question": "Which team won the 2020 NBA Championship?",
+    "options": [
+      "Los Angeles Lakers",
+      "Miami Heat",
+      "Golden State Warriors"
+    ],
+    "correctAnswer": "Los Angeles Lakers"
+  },
+  {
+    "questionId": 5,
+    "question": "Who is the creator of the 'Harry Potter' series?",
+    "options": [
+      "J.R.R. Tolkien",
+      "George R.R. Martin",
+      "J.K. Rowling"
+    ],
+    "correctAnswer": "J.K. Rowling"
+  },
+  {
+    "questionId": 6,
+    "question": "Which actor portrayed Tony Stark in the Marvel Cinematic Universe?",
+    "options": [
+      "Chris Hemsworth",
+      "Chris Evans",
+      "Robert Downey Jr."
+    ],
+    "correctAnswer": "Robert Downey Jr."
+  },
+  {
+    "questionId": 7,
+    "question": "Who won the 2018 FIFA World Cup?",
+    "options": [
+      "Germany",
+      "France",
+      "Argentina"
+    ],
+    "correctAnswer": "France"
+  },
+  {
+    "questionId": 8,
+    "question": "Which famous musician is known as the 'King of Pop'?",
+    "options": [
+      "Elvis Presley",
+      "Michael Jackson",
+      "Prince"
+    ],
+    "correctAnswer": "Michael Jackson"
+  },
+  {
+    "questionId": 9,
+    "question": "In which year did the first 'Star Wars' movie release?",
+    "options": [
+      "1975",
+      "1977",
+      "1980"
+    ],
+    "correctAnswer": "1977"
+  },
+  {
+    "questionId": 10,
+    "question": "What sport does Serena Williams play?",
+    "options": [
+      "Soccer",
+      "Tennis",
+      "Basketball"
+    ],
+    "correctAnswer": "Tennis"
+  }
+]

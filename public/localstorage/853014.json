@@ -1,0 +1,152 @@
+[
+  {
+    "questionId": 1,
+    "question": "What is the largest continent?",
+    "options": [
+      "Asia",
+      "Africa",
+      "Europe"
+    ],
+    "correctAnswer": "Asia"
+  },
+  {
+    "questionId": 2,
+    "question": "Who painted the Mona Lisa?",
+    "options": [
+      "Vincent van Gogh",
+      "Leonardo da Vinci",
+      "Pablo Picasso"
+    ],
+    "correctAnswer": "Leonardo da Vinci"
+  },
+  {
+    "questionId": 3,
+    "question": "What is the currency of Japan?",
+    "options": [
+      "Yuan",
+      "Won",
+      "Yen"
+    ],
+    "correctAnswer": "Yen"
+  },
+  {
+    "questionId": 4,
+    "question": "What is the tallest building in the world?",
+    "options": [
+      "Empire State Building",
+      "Burj Khalifa",
+      "Eiffel Tower"
+    ],
+    "correctAnswer": "Burj Khalifa"
+  },
+  {
+    "questionId": 5,
+    "question": "Which planet is known as the Red Planet?",
+    "options": [
+      "Mars",
+      "Venus",
+      "Jupiter"
+    ],
+    "correctAnswer": "Mars"
+  },
+  {
+    "questionId": 6,
+    "question": "Who was the first man to walk on the moon?",
+    "options": [
+      "Buzz Aldrin",
+      "Neil Armstrong",
+      "Yuri Gagarin"
+    ],
+    "correctAnswer": "Neil Armstrong"
+  },
+  {
+    "questionId": 7,
+    "question": "What is the boiling point of water in Celsius?",
+    "options": [
+      "90°C",
+      "100°C",
+      "110°C"
+    ],
+    "correctAnswer": "100°C"
+  },
+  {
+    "questionId": 8,
+    "question": "Which country is famous for the Great Wall?",
+    "options": [
+      "China",
+      "India",
+      "Egypt"
+    ],
+    "correctAnswer": "China"
+  },
+  {
+    "questionId": 9,
+    "question": "What is the largest ocean on Earth?",
+    "options": [
+      "Atlantic Ocean",
+      "Indian Ocean",
+      "Pacific Ocean"
+    ],
+    "correctAnswer": "Pacific Ocean"
+  },
+  {
+    "questionId": 10,
+    "question": "Which animal is known as the King of the Jungle?",
+    "options": [
+      "Lion",
+      "Elephant",
+      "Tiger"
+    ],
+    "correctAnswer": "Lion"
+  },
+  {
+    "questionId": 11,
+    "question": "What is the national flower of Japan?",
+    "options": [
+      "Lotus",
+      "Cherry Blossom",
+      "Rose"
+    ],
+    "correctAnswer": "Cherry Blossom"
+  },
+  {
+    "questionId": 12,
+    "question": "Which country is known as the Land of the Rising Sun?",
+    "options": [
+      "Japan",
+      "Korea",
+      "China"
+    ],
+    "correctAnswer": "Japan"
+  },
+  {
+    "questionId": 13,
+    "question": "What is the highest mountain in the world?",
+    "options": [
+      "Mount Everest",
+      "Mount Kilimanjaro",
+      "Mount Fuji"
+    ],
+    "correctAnswer": "Mount Everest"
+  },
+  {
+    "questionId": 14,
+    "question": "What is the smallest country in the world?",
+    "options": [
+      "Monaco",
+      "Vatican City",
+      "San Marino"
+    ],
+    "correctAnswer": "Vatican City"
+  },
+  {
+    "questionId": 15,
+    "question": "Which animal is known for its long neck?",
+    "options": [
+      "Giraffe",
+      "Elephant",
+      "Zebra"
+    ],
+    "correctAnswer": "Giraffe"
+  }
+]

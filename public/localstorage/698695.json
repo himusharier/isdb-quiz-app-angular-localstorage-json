@@ -1,0 +1,102 @@
+[
+  {
+    "questionId": 1,
+    "question": "Who wrote the novel '1984'?",
+    "options": [
+      "George Orwell",
+      "Aldous Huxley",
+      "Ray Bradbury"
+    ],
+    "correctAnswer": "George Orwell"
+  },
+  {
+    "questionId": 2,
+    "question": "Which Shakespeare play features the characters 'Romeo' and 'Juliet'?",
+    "options": [
+      "Macbeth",
+      "Romeo and Juliet",
+      "Hamlet"
+    ],
+    "correctAnswer": "Romeo and Juliet"
+  },
+  {
+    "questionId": 3,
+    "question": "Who is the author of the Harry Potter series?",
+    "options": [
+      "J.K. Rowling",
+      "J.R.R. Tolkien",
+      "C.S. Lewis"
+    ],
+    "correctAnswer": "J.K. Rowling"
+  },
+  {
+    "questionId": 4,
+    "question": "What is the name of the ship in Herman Melville's 'Moby-Dick'?",
+    "options": [
+      "The Black Pearl",
+      "The Pequod",
+      "The Nautilus"
+    ],
+    "correctAnswer": "The Pequod"
+  },
+  {
+    "questionId": 5,
+    "question": "Who wrote 'Pride and Prejudice'?",
+    "options": [
+      "Charlotte Brontë",
+      "Jane Austen",
+      "Mary Shelley"
+    ],
+    "correctAnswer": "Jane Austen"
+  },
+  {
+    "questionId": 6,
+    "question": "Which novel is set during the French Revolution and written by Charles Dickens?",
+    "options": [
+      "Great Expectations",
+      "A Tale of Two Cities",
+      "David Copperfield"
+    ],
+    "correctAnswer": "A Tale of Two Cities"
+  },
+  {
+    "questionId": 7,
+    "question": "Who wrote 'The Catcher in the Rye'?",
+    "options": [
+      "Mark Twain",
+      "F. Scott Fitzgerald",
+      "J.D. Salinger"
+    ],
+    "correctAnswer": "J.D. Salinger"
+  },
+  {
+    "questionId": 8,
+    "question": "Which book begins with the line 'Call me Ishmael'?",
+    "options": [
+      "Moby-Dick",
+      "Treasure Island",
+      "The Old Man and the Sea"
+    ],
+    "correctAnswer": "Moby-Dick"
+  },
+  {
+    "questionId": 9,
+    "question": "Who wrote 'The Lord of the Rings' series?",
+    "options": [
+      "C.S. Lewis",
+      "George R.R. Martin",
+      "J.R.R. Tolkien"
+    ],
+    "correctAnswer": "J.R.R. Tolkien"
+  },
+  {
+    "questionId": 10,
+    "question": "In which novel would you find the character 'Atticus Finch'?",
+    "options": [
+      "To Kill a Mockingbird",
+      "The Grapes of Wrath",
+      "Of Mice and Men"
+    ],
+    "correctAnswer": "To Kill a Mockingbird"
+  }
+]
