@@ -47,10 +47,10 @@
 
         <div class="question-card">
             <ol class="list-ordered">
-                <li *ngFor="let question of questions; let i = index" class="question-div">
+                <li *ngFor="let question of questions" class="question-div">
                     {{ question.question }}
                     <!-- Delete button next to the question -->
-                    <button type="button" class="btn btn-danger btn-sm" (click)="deleteQuestion(i)" style="background-color: initial; color: #BB2D3B;">
+                    <button type="button" class="btn btn-danger btn-sm" (click)="deleteQuestion(question.questionId)" style="background-color: initial; color: #BB2D3B;">
                         <i class="bi bi-trash-fill"></i>
                     </button>
                     <ol class="list-group-flush list-letters">
