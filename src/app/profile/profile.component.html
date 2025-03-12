@@ -41,7 +41,7 @@
                         <i class="bi bi-box-arrow-up-right"></i>
                         Attend
                     </a>
-                    <a href="/quiz" class="btn btn-primary" style="background-color: #5b62b3; border: none; margin-left: 10px;" data-bs-toggle="modal" data-bs-target="#exampleModal3">
+                    <a (click)="showScoreboard(quiz.quizId, quiz.quizTitle)" class="btn btn-primary" style="background-color: #5b62b3; border: none; margin-left: 10px;" data-bs-toggle="modal" data-bs-target="#exampleModal3">
                         <i class="bi bi-boxes"></i>
                         Scoreboard
                     </a>
@@ -57,4 +57,40 @@
     </div>
 </div>
 
+<!-- Modal -->
+<div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel3" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Scoreboard</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <h5><i class="bi bi-hash" style="color: #ff8482"></i> {{getQuizTitle | titlecase}}</h5>
+            <table *ngIf="scoreboard.length > 0" class="table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Score</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let record of scoreboard">
+                  <td>{{ record.userName }}</td>
+                  <td>{{ record.score }} / {{ record.totalQuestions }}</td>
+                </tr>
+              </tbody>
+            </table>
+            
+          <p *ngIf="scoreboard.length === 0" class="text-warning-emphasis pt-3"><i class="bi bi-exclamation-triangle"></i> No scoreboard data available.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+</div>
+
+
+<!-- Edit profile -->
 <app-edit-profile [userName]="loggedinUserName" [userEmail]="loggedinUserEmail" [userId]="loggedinUserId"></app-edit-profile>

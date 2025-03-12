@@ -19,6 +19,9 @@ export class ProfileComponent implements OnInit {
   // quizzes: Quizzes = new Quizzes('', '', new Date(), '', '', '');
 
   myQuizzes: Quizzes[] = [];
+  
+  getQuizTitle: string = "";
+  scoreboard: any[] = [];
 
   loggedinUserId: string = "";
   loggedinUserName: string = "";
@@ -62,6 +65,12 @@ export class ProfileComponent implements OnInit {
   getAttendeeCount(quizId: string): number {
     const currentScoreboard: any[] = JSON.parse(localStorage.getItem(`scoreboard-${quizId}`) || '[]');
     return currentScoreboard.length;
+  }
+
+  showScoreboard(quizId: string, quizTitle: string): void {
+    const scoreboardData = JSON.parse(localStorage.getItem(`scoreboard-${quizId}`) || '[]');
+    this.scoreboard = scoreboardData;
+    this.getQuizTitle = quizTitle;
   }
 
 }
