@@ -45,25 +45,26 @@ export class QuizTestComponent implements OnInit {
   ngOnInit(): void {
     this.updateHeaderTitleValue("Quiz Test");
     this.titleService.setTitle('Quiz Test - QuizFusion');
-
+  
     const quizzesList: Quizzes[] = JSON.parse(localStorage.getItem('quizzes') || '[]');
     const quiz = quizzesList.find(x => x.quizId === this.quizId);
     if (quiz) {
       this.getQuizTitle = quiz.quizTitle;
     }
-
-    const quizData = JSON.parse(localStorage.getItem(this.quizId) || '[]'); 
+  
+    const quizData = JSON.parse(localStorage.getItem(this.quizId) || '[]');
     if (quizData.length === 0) {
       window.location.href = "/quiz";
       return;
     }
     this.questionSet = quizData;
-
+  
     this.quizForm = this.formBuilder.group({});
     this.questionSet.forEach(x => {
-      this.quizForm.addControl(x.questionId, new FormControl('', [])); 
+      // Convert questionId to string
+      this.quizForm.addControl(String(x.questionId), new FormControl('')); 
     });
-
+  
     if (!this.loggedinUserService.isLoggedIn()) {
       this.router.navigate(['/home']);
     } else {
@@ -73,6 +74,7 @@ export class QuizTestComponent implements OnInit {
       this.loggedinUserEmail = loggedInUser ? loggedInUser.userEmail : '';
     }
   }
+  
 
   getQuestionCount(quizId: string): string {
     const data = JSON.parse(localStorage.getItem(quizId) || '[]'); 
@@ -83,12 +85,16 @@ export class QuizTestComponent implements OnInit {
     this.score = 0;
   
     this.questionSet.forEach(x => {
-      const controlValue = this.quizForm.get(x.question)?.value;
-      if (controlValue === x.correctAnswer) {
-        this.score++;
+      // Convert questionId to string here
+      const control = this.quizForm.get(String(x.questionId)); 
+      if (control) {
+        const controlValue = control.value;
+        if (controlValue === x.correctAnswer) {
+          this.score++;
+        }
       }
     });
-  
+    
     const scoreboardData = {
       userId: this.loggedinUserId,
       userName: this.loggedinUserName,
