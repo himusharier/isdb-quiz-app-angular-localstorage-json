@@ -61,7 +61,7 @@ export class QuizTestComponent implements OnInit {
 
     this.quizForm = this.formBuilder.group({});
     this.questionSet.forEach(x => {
-      this.quizForm.addControl(x.questionId, new FormControl('', [])); // Add validators if needed
+      this.quizForm.addControl(x.questionId, new FormControl('', [])); 
     });
 
     if (!this.loggedinUserService.isLoggedIn()) {
@@ -76,21 +76,19 @@ export class QuizTestComponent implements OnInit {
 
   getQuestionCount(quizId: string): string {
     const data = JSON.parse(localStorage.getItem(quizId) || '[]'); 
-    return data.length;
+    return data.length.toString();
   }
 
   onSubmit(): void {
     this.score = 0;
   
-    // Iterate through the questions and calculate the score
     this.questionSet.forEach(x => {
-      const controlValue = this.quizForm.get(x.questionId)?.value;
+      const controlValue = this.quizForm.get(x.question)?.value;
       if (controlValue === x.correctAnswer) {
         this.score++;
       }
     });
   
-    // Prepare the data to be saved in the scoreboard
     const scoreboardData = {
       userId: this.loggedinUserId,
       userName: this.loggedinUserName,
@@ -99,18 +97,10 @@ export class QuizTestComponent implements OnInit {
       totalQuestions: this.questionSet.length,
       attendTime: new Date().toISOString()
     };
-  
-    // Retrieve the current scoreboard data from localStorage (if any)
     const currentScoreboard: any[] = JSON.parse(localStorage.getItem(`scoreboard-${this.quizId}`) || '[]');
-    
-    // Append the new result to the existing scoreboard
     currentScoreboard.push(scoreboardData);
-  
-    // Save the updated scoreboard back to localStorage
     localStorage.setItem(`scoreboard-${this.quizId}`, JSON.stringify(currentScoreboard));
-  
-    // Show results to the user
+
     this.showResults = true;
   }
-  
 }

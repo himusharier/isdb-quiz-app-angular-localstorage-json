@@ -53,21 +53,22 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-            <h5><i class="bi bi-hash" style="color: #ff8482"></i> {{getQuizTitle}}</h5>
-          <table *ngIf="scoreboard.length > 0">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Score</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let record of scoreboard">
-                <td>{{ record.userName }}</td>
-                <td>{{ record.score }} / {{ record.totalQuestions }}</td>
-              </tr>
-            </tbody>
-          </table>
+            <h5><i class="bi bi-hash" style="color: #ff8482"></i> {{getQuizTitle | titlecase}}</h5>
+            <table *ngIf="scoreboard.length > 0" class="table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Score</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let record of scoreboard">
+                  <td>{{ record.userName }}</td>
+                  <td>{{ record.score }} / {{ record.totalQuestions }}</td>
+                </tr>
+              </tbody>
+            </table>
+            
           <p *ngIf="scoreboard.length === 0" class="text-warning-emphasis pt-3"><i class="bi bi-exclamation-triangle"></i> No scoreboard data available.</p>
         </div>
         <div class="modal-footer">

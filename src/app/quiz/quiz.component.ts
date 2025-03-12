@@ -71,16 +71,10 @@ export class QuizComponent implements OnInit {
         }
   }
 
-  // Show the scoreboard for a specific quiz
   showScoreboard(quizId: string, quizTitle: string): void {
     const scoreboardData = JSON.parse(localStorage.getItem(`scoreboard-${quizId}`) || '[]');
     this.scoreboard = scoreboardData;
     this.getQuizTitle = quizTitle;
-  }
-
-  // Optionally, you can also add logic to handle the modal closing
-  closeScoreboard(): void {
-    this.scoreboard = [];
   }
 
   getAttendeeCount(quizId: string): number {

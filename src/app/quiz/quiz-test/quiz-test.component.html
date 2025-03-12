@@ -3,7 +3,7 @@
 <div class="container p-4 pt-0">
     <div class="container-main-div p-3">
         <div class="container">
-            <form [formGroup]="quizForm" (ngSubmit)="onSubmit()">
+            <form [formGroup]="quizForm" (submit)="onSubmit()">
                 <div class="quiz-card" *ngIf="!showResults">
                     <span class="d-flex flex-column" style="margin-left: -10px; border-bottom: 1px solid #ccc; padding:  0 0 10px 0;">                 
                         <h4 class="quiz-title"><i class="bi bi-hash fs-5" style="color: #ff8482;"></i> {{getQuizTitle | titlecase}}</h4>
