@@ -15,15 +15,15 @@
             </div>
         </div>
         <div class="mt-4">
-            <h4 style="color: #ff8482;">Your Quizzes</h4>
+            <h4 style="color: #ff8482;"><i class="bi bi-ticket-detailed"></i> Your Quizzes</h4>
             @if (myQuizzes.length > 0) {
                 @for (quiz of myQuizzes; track quiz.quizId) {
-                    <div class="d-flex justify-content-between" style="border-bottom: 1px solid #ccc; margin-top: 20px;">
+                <div class="d-flex justify-content-between profile-quiz-list">
                 <span>
-                    <h5>{{quiz.quizTitle}}</h5>
+                    <h5>{{quiz.quizTitle | titlecase}}</h5>
                     <p style="font-size: 14px;">
                         <i class="bi bi-person"></i>
-                        {{quiz.creatorName}},
+                        {{quiz.creatorName | titlecase}},
                         <i class="bi bi-calendar4-week"></i>
                         {{quiz.quizDate | date: 'dd/MM/yyyy'}},
                         <i class="bi bi-balloon"></i>

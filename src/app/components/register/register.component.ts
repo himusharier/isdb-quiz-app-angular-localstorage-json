@@ -34,7 +34,7 @@ export class RegisterComponent {
       );
 
       if (success) {
-        this.message = this.domSanitizer.bypassSecurityTrustHtml('<div class="alert alert-success" role="alert"><i class="bi bi-check-circle"></i> Registration successful! Please login...</div>');
+        this.message = this.domSanitizer.bypassSecurityTrustHtml('<div class="alert alert-success" role="alert"><i class="bi bi-check-circle"></i> Registration successful! Please login now...</div>');
         this.isError = false;
         // setTimeout(() => this.message = "", 3000);
 

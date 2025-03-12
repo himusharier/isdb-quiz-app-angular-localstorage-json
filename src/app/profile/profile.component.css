@@ -1,0 +1,7 @@
+.profile-quiz-list {
+    border-bottom: 1px solid #ccc; 
+    margin-top: 20px;
+}
+.profile-quiz-list:last-child {
+    border-bottom: 0;
+}
