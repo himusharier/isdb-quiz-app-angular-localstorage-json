@@ -20,6 +20,9 @@ export class QuizTestComponent implements OnInit {
   loggedinUserName: string = "";
   loggedinUserEmail: string = "";
 
+  quizUserScore: string = "";
+  quizUserTotal: string = "";
+
   @Input() quizId!: string; 
   getQuizTitle: string = "";
 
@@ -73,6 +76,12 @@ export class QuizTestComponent implements OnInit {
       this.loggedinUserName = loggedInUser ? loggedInUser.userName : '';
       this.loggedinUserEmail = loggedInUser ? loggedInUser.userEmail : '';
     }
+    
+    const scoreboardData = JSON.parse(localStorage.getItem(`scoreboard-${this.quizId}`) || '[]');
+    const quizUserDetails = scoreboardData.find((entry: any) => entry.userId === this.loggedinUserId);
+    this.quizUserScore =  quizUserDetails.score;
+    this.quizUserTotal = quizUserDetails.totalQuestions;
+    
   }
   
 

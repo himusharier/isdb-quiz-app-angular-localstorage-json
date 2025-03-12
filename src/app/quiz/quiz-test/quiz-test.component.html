@@ -3,6 +3,28 @@
 <div class="container p-4 pt-0">
     <div class="container-main-div p-3">
         <div class="container">
+            @if (isUserInScoreboard(loggedinUserId, quizId)) {
+                <div class="score">
+                    <h4 class="text-primary"><i class="bi bi-check-lg"></i> Quiz already submitted!</h4>
+                    <table>
+                        <tr>
+                            <td>Name</td>
+                            <td>{{loggedinUserName}}</td>
+                        </tr>
+                        <tr>
+                            <td>Email</td>
+                            <td>{{loggedinUserEmail}}</td>
+                        </tr>
+                        <tr>
+                            <td>Score</td>
+                            <td>{{ quizUserScore }} / {{ quizUserTotal }}</td>
+                        </tr>
+                    </table>
+                    <a routerLink="/quiz" class="btn btn-primary" style="background-color: #5b62b3; border: none; margin-top: 50px; margin-left: 5px;"><i class="bi bi-arrow-left"></i> Back To Quizzes</a>
+                </div>
+
+            } @else {
+                
             <form [formGroup]="quizForm" (submit)="onSubmit()">
                 <div class="quiz-card" *ngIf="!showResults">
                     <span class="d-flex flex-column" style="margin-left: -10px; border-bottom: 1px solid #ccc; padding:  0 0 10px 0;">                 
@@ -49,6 +71,7 @@
                 </table>
                 <a routerLink="/quiz" class="btn btn-primary" style="background-color: #5b62b3; border: none; margin-top: 50px; margin-left: 5px;"><i class="bi bi-arrow-left"></i> Back To Quizzes</a>
             </div>
+            }
         </div>
     </div>
 </div>
