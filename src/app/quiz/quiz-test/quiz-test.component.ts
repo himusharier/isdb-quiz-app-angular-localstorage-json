@@ -109,4 +109,11 @@ export class QuizTestComponent implements OnInit {
 
     this.showResults = true;
   }
+
+  isUserInScoreboard(userId: string, quizId: string): boolean {
+    const scoreboardData = JSON.parse(localStorage.getItem(`scoreboard-${quizId}`) || '[]');
+    const userFound = scoreboardData.some((entry: any) => entry.userId === userId);
+    return userFound;
+  }
+
 }
