@@ -163,7 +163,11 @@ export class CreateQuizComponent implements OnInit {
     localStorage.setItem('quizzes', JSON.stringify(updatedQuizzes));
     window.location.href="/profile";
     localStorage.removeItem(this.quizId);
+  }
+
+  deleteScoreboard(quizId: string): void {
     localStorage.removeItem(`scoreboard-${this.quizId}`);
+    window.location.reload();
   }
 
 }
