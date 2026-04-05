@@ -1,0 +1,36 @@
+# Git
+.git
+.gitignore
+
+# Node
+node_modules
+npm-debug.log
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE/editor files
+.vscode/
+.idea/
+
+# Docker
+Dockerfile
+.dockerignore
+
+# Build output
+dist/
+build/
+out/
+
+# Environment files
+.env
+.env.*
+
+# Temporary files
+tmp/
+temp/
+*.tmp
