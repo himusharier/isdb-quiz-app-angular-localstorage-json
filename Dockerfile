@@ -9,5 +9,5 @@ RUN npm run build
 
 RUN npm install -g serve
 
-EXPOSE 8090
-CMD ["serve", "-s", "dist/quizfusion-webapp/browser", "-l", "8090"]
+EXPOSE 4200
+CMD ["serve", "-s", "dist/quizfusion-webapp/browser", "-l", "4200"]
