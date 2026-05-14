@@ -31,6 +31,6 @@ RUN npm install -g serve
 
 COPY --from=build /app/dist ./dist
 
-EXPOSE 4010
+EXPOSE 4000
 
-CMD ["serve", "-s", "dist/quizfusion-webapp/browser", "-l", "4010"]
+CMD ["serve", "-s", "dist/quizfusion-webapp/browser", "-l", "4000"]
